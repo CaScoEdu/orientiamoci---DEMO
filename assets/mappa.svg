@@ -1,0 +1,195 @@
+<?xml-stylesheet type="text/css" ?>
+<svg viewBox="0 0 2143 2500" xmlns="http://www.w3.org/2000/svg" id="school-map">
+
+    <!-- ==========================================
+       1. DEFS (DEFINIZIONI REUTILIZZABILI)
+       ========================================== -->
+    <defs>
+
+        <style>
+            /* Stili di base per la visualizzazione standalone ed Inkscape */
+            .terreno {
+                fill: #bbf7d0;
+                fill-opacity: 1;
+                stroke: #16a34a;
+                stroke-width: 5px;
+                rx: 30px;
+            }
+
+            .ingresso-pedonale {
+                fill: #d3d3d3;
+                stroke: none;
+                pointer-events: none;
+            }
+
+            .corridoio {
+                fill: #d3d3d3;
+                stroke: none;
+                pointer-events: none;
+            }
+
+            .room {
+                fill: #ffffff;
+                stroke: #475569;
+                stroke-width: 1.5px;
+                transition: fill 0.2s ease, stroke 0.2s ease;
+                cursor: pointer;
+            }
+
+            .room-label {
+                font-size: 11px;
+                font-weight: bold;
+                fill: #0f172a;
+                text-anchor: middle;
+                dominant-baseline: central;
+                pointer-events: none;
+            }
+
+            .room:hover {
+                fill: #f1f5f9;
+                stroke: #0284c7;
+                stroke-width: 2px;
+            }
+
+            .evacuazione-text {
+                fill: #ffffff;
+                font-size: 64px;
+                font-weight: bold;
+                text-anchor: middle;
+                dominant-baseline: central;
+            }
+
+            .evacuazione-text-small {
+                fill: #ffffff;
+                font-size: 26px;
+                font-weight: bold;
+                text-anchor: middle;
+                dominant-baseline: central;
+            }
+
+            .evacuazione-text-small text {
+                fill: #1e293b;
+                font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+                user-select: none;
+            }
+        </style>
+
+        <!-- Master Uscita di Sicurezza (100x36) con lettera sulla destra -->
+        <g id="master-uscita-sicurezza-small">
+            <rect x="0" y="0" width="100" height="36" rx="4" fill="#008B59" stroke="#FFFFFF" stroke-width="2.5" />
+            <rect x="41" y="7" width="12" height="22" fill="#FFFFFF" />
+            <rect x="43" y="9" width="8" height="18" fill="#008B59" />
+            <circle cx="19" cy="12" r="2" fill="#FFFFFF" />
+            <path d="M18 15 L23 17 L20 22 L25 27 M20 22 L15 26" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" fill="none" />
+            <path d="M20 17 L15 16 M20 17 L25 15" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" fill="none" />
+            <path d="M29 18 H36 M33 14 L37 18 L33 22" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" fill="none" />
+
+            <!-- Testo Lettera (posizionato nel rettangolo 45-100 px) -->
+            <text x="72" y="18" class="evacuazione-text-small"></text>
+        </g>
+
+        <!-- Master Punto di Raccolta (140x80) con lettera sulla destra -->
+        <g id="master-punto-raccolta" class="sign-assembly">
+            <rect x="0" y="0" width="140" height="80" rx="8" fill="#008B59" stroke="#FFFFFF" stroke-width="4" />
+            <circle cx="34" cy="36" r="4" fill="#FFFFFF" />
+            <path d="M30 44 h8 v14 h-3 v-8 h-2 v8 h-3 Z" fill="#FFFFFF" />
+            <circle cx="46" cy="36" r="4" fill="#FFFFFF" />
+            <path d="M42 44 h8 v14 h-3 v-8 h-2 v8 h-3 Z" fill="#FFFFFF" />
+            <path d="M12 12 L26 26 M26 26 H18 M26 26 V18" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round" fill="none" />
+            <path d="M68 12 L54 26 M54 26 H62 M54 26 V18" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round" fill="none" />
+            <path d="M12 68 L26 54 M26 54 H18 M26 54 V62" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round" fill="none" />
+            <path d="M68 68 L54 54 M54 54 H62 M54 54 V62" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round" fill="none" />
+
+            <!-- Testo Lettera (posizionato nel rettangolo 70-140 px) -->
+            <text x="105" y="40" class="evacuazione-text"></text>
+        </g>
+
+    </defs>
+
+    <!-- ==========================================
+       2. LAYER STRUTTURA & EDIFICI
+       ========================================== -->
+
+    <g id="layer-struttura">
+
+        <!-- terreno -->
+        <rect id="terreno" class="terreno" x="10" y="10" width="2122" height="2480" />
+
+        <!-- corridoi -->
+        <rect id="corridoio-nord" x="753" y="787" width="1030" height="30" class="corridoio" />
+        <rect id="corridoio-centrale-verticale" x="1293" y="787" width="40" height="385" class="corridoio" />
+        <rect id="corridoio-ingresso-principale" x="753" y="952" width="535" height="60" class="corridoio" />
+
+        <!-- 2. LAYER PERCORSO (Inserito qui per stare SOPRA i corridoi ma SOTTO le stanze) -->
+        <g id="layer-percorso"></g>
+
+        <!-- ========================================================================
+       Stanze, Aule & Servizi
+       Rettangoli delle aule, laboratori, uffici, bagni, icone di sicurezza.
+       ======================================================================== -->
+
+        <!-- ===== Stanze, Aule e Servizi interni all'Eistein ===== -->
+
+        <!-- ===== BLOCCO NORD: RIGA INFERIORE (Aule & Break) ===== -->
+        <rect id="laboratorio" class="room" x="883" y="817" width="90" height="60" />
+        <rect id="aula-4" class="room" x="973" y="817" width="70" height="60" />
+        <rect id="aula-3" class="room" x="1043" y="817" width="70" height="60" />
+        <rect id="aula-2" class="room" x="1113" y="817" width="70" height="60" />
+        <rect id="aula-1" class="room" x="1183" y="817" width="70" height="60" />
+
+
+        <!-- ===== UFFICI CENTRALI ===== -->
+        <rect id="uffici" class="room" x="1333" y="847" width="80" height="115" />
+
+        <!-- AREA INGRESSO PRINCIPALE  -->
+        <!-- Nodo Ingresso nel corridoio -->
+        <g id="ingresso-principale" class="nodo-ingresso" style="cursor: pointer;">
+            <circle cx="1290" cy="982" r="16" fill="#ea580c" stroke="#ffffff" stroke-width="2" />
+            <text x="1290" y="987" text-anchor="middle" fill="#ffffff" font-size="18" font-weight="bold">IN</text>
+        </g>
+    </g>
+
+    <!-- ==========================================
+     3. LAYER SEGNALETICA & OVERLAY INFORMATIVI
+     ========================================== -->
+
+    <!-- ==========================================
+       4. LAYER EVACUAZIONE & SICUREZZA (Livello Superiore)
+       ========================================== -->
+    <g id="layer-evacuazione">
+        <!-- ===== USCITE DI SICUREZZA ===== -->
+        <g id="uscita-sicurezza-a" class="evacuazione-icon" transform="translate(915, 787) scale(-0.7, 0.7)">
+            <use href="#master-uscita-sicurezza-small" />
+            <text x="-72" y="18" class="evacuazione-text-small" transform="scale(-1, 1)">A</text>
+        </g>
+        <!-- ===== PUNTI DI RACCOLTA ===== -->
+        <g id="punto-raccolta-a" class="evacuazione-icon" transform="translate(800, 700) scale(0.5, 0.5)">
+            <use href="#master-punto-raccolta" />
+            <text x="105" y="40" class="evacuazione-text">A</text>
+        </g>
+
+    </g>
+    <g id="layer-nodi" class="layer-snodi-debug">
+        <!-- Incroci Corridoi -->
+        <circle id="incrocio" cx="1313" cy="802" r="4" />
+
+        <circle id="snodo-laboratorio" cx="930" cy="802" r="4" />
+        <circle id="snodo-aula-4" cx="1008" cy="802" r="4" />
+        <circle id="snodo-aula-3" cx="1079" cy="802" r="4" />
+        <circle id="snodo-aula-2" cx="1145" cy="802" r="4" />
+        <circle id="snodo-aula-1" cx="1217" cy="802" r="4" />
+        <circle id="snodo-uffici" cx="1373" cy="802" r="4" />
+        <circle id="snodo-ingresso-principale" cx="1313" cy="982" r="4" />
+        <circle id="snodo-sicurezza-a-1" cx="783" cy="802" r="4" />
+        <circle id="snodo-sicurezza-a-2" cx="783" cy="721" r="4" />
+
+    </g>
+
+</svg>

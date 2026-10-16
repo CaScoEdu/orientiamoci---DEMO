@@ -1,0 +1,22 @@
+export default {
+  adiacenze: {
+    "ingresso-principale": ["snodo-ingresso-principale"],
+    "snodo-ingresso-principale": ["ingresso-principale", "incrocio"],
+    incrocio: ["snodo-ingresso-principale", "snodo-uffici", "snodo-aula-1"],
+    "snodo-uffici": ["incrocio", "uffici"],
+    uffici: ["snodo-uffici"],
+    "snodo-aula-1": ["aula-1", "snodo-aula-2", "incrocio"],
+    "aula-1": ["snodo-aula-1"],
+    "snodo-aula-2": ["aula-2", "snodo-aula-1","snodo-aula-3"],
+    "aula-2": ["snodo-aula-2"],
+    "snodo-aula-3": ["snodo-aula-2", "aula-3", "snodo-aula-4"],
+    "aula-3": ["snodo-aula-3"],
+    "snodo-aula-4": ["snodo-aula-3", "aula-4", "snodo-laboratorio"],
+    "aula-4": ["snodo-aula-4"],
+    "snodo-laboratorio": ["snodo-aula-4", "laboratorio", "snodo-sicurezza-a-1"],
+    laboratorio: ["snodo-laboratorio"],
+    "snodo-sicurezza-a-1": ["snodo-laboratorio", "snodo-sicurezza-a-2"],
+    "snodo-sicurezza-a-2": ["snodo-sicurezza-a-1", "punto-raccolta-a"],
+    "punto-raccolta-a": ["snodo-sicurezza-a-2"],
+  },
+};

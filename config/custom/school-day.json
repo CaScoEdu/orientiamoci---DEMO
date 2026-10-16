@@ -1,0 +1,42 @@
+{
+  "titoloEvento": "Mappa della Scuola",
+  "stanze": {
+    "ingresso-principale": {
+        "etichetta-mappa": "Ing",
+      "etichetta-elenco": "📍 INGRESSO",
+      "categoria": "Accesso",
+      "descrizione": "Ingresso principale dell'istituto."
+    },
+    "aula-1": {
+      "etichetta-elenco": "Aula 1",
+      "categoria": "Aule",
+      "descrizione": "Aula didattica."
+    },
+    "aula-2": {
+      "etichetta-elenco": "Aula 2",
+      "categoria": "Aule",
+      "descrizione": "Aula didattica."
+    },
+    "aula-3": {
+      "etichetta-elenco": "Aula 3",
+      "categoria": "Aule",
+      "descrizione": "Aula didattica."
+    },
+    "aula-4": {
+      "etichetta-elenco": "Aula 4",
+      "categoria": "Aule",
+      "descrizione": "Aula didattica."
+    },
+    "uffici": {
+      "etichetta-elenco": "Uffici",
+      "categoria": "Uffici",
+      "descrizione": "Uffici della Scuola"
+    },
+    "laboratorio": {
+      "etichetta-elenco": "Lab Multidisciplinare",
+      "categoria": "Laboratori",
+      "descrizione": "Laboratorio informatica, elettronica, disegno tecnico"
+    }
+
+  }
+}

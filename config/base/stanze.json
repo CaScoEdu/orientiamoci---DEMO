@@ -1,0 +1,37 @@
+{
+  "titoloEvento": "Mappa base dell'Istituto",
+  "stanze": {
+    "ingresso-principale": {
+      "etichetta-mappa": "Ing.",
+      "punto-raccolta": "a"
+    },
+    "aula-1": {
+      "etichetta-mappa": "Aula\n1",
+      "punto-raccolta": "a"
+    },
+    "aula-2": {
+      "etichetta-mappa": "Aula\n2",
+      "punto-raccolta": "a"
+    },
+
+    "aula-3": {
+      "etichetta-mappa": "Aula\n3",
+      "punto-raccolta": "a"
+    },
+
+    "aula-4": {
+      "etichetta-mappa": "Aula\n4",
+      "punto-raccolta": "a"
+    },
+
+    "laboratorio": {
+      "etichetta-mappa": "Laboratorio",
+      "punto-raccolta": "a"
+    },
+
+    "uffici": {
+      "etichetta-mappa": "Uffici",
+      "punto-raccolta": "a"
+    }
+  }
+}

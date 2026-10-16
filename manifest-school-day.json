@@ -1,0 +1,22 @@
+{
+  "id": "/school-day.html",
+  "start_url": "./school-day.html?config=school-day",
+  "scope": "./school-day.html",
+  "name": "Mappa Istituto - School Day",
+  "short_name": "School Day",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "./assets/icons/icon-school-day-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/icons/icon-school-day-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mappa Istituto Einstein</title>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const config = params.get("config");
+
+      if (config === "open-school") {
+        window.location.replace("./open-school.html" + window.location.search);
+      } else {
+        window.location.replace("./school-day.html" + window.location.search);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

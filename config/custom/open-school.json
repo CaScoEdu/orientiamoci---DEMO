@@ -1,0 +1,30 @@
+{
+  "titoloEvento": "Mappa della Scuola",
+  "stanze": {
+    "ingresso-principale": {
+      "etichetta-mappa": "Ing",
+      "etichetta-elenco": "📍 INGRESSO",
+      "categoria": "Accesso",
+      "descrizione": "Ingresso principale dell'istituto."
+    },
+    "aula-1": {
+      "etichetta-mappa": "Stand\nInformatica",
+      "etichetta-elenco": "Stand Informatica",
+      "categoria": "Informatica",
+      "descrizione": "Workshop Informatica"
+    },
+    "aula-3": {
+      "etichetta-mappa": "Stand\nElettronica",
+      "etichetta-elenco": "Stand Elettronica",
+      "categoria": "Elettronica",
+      "descrizione": "Workshop Elettronica"
+    },
+    "laboratorio": {
+      "etichetta-mappa": "Stand\nLiceo",
+
+      "etichetta-elenco": "Stand Liceo",
+      "categoria": "Artistico",
+      "descrizione": "Workshop Liceo Artistico"
+    }
+  }
+}
