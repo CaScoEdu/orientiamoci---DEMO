@@ -1,6 +1,6 @@
-# 🏫 Mappa Interattiva Istituto Einstein (PWA Dual-Event)
+# 🏫 Mappa Interattiva Scuola (PWA Dual-Event)
 
-Un'applicazione web progressiva (**Progressive Web App - PWA**) modulare ed offline-first per la navigazione indoor dell'Istituto. Progettata per supportare una gestione **multi-evento** (es. *Open School* e *School Day* ordinario) tramite configurazioni JSON dinamiche, calcolo del percorso minimo mediante algoritmo di Dijkstra su grafo ed isolamento completo delle stanze inattive.
+Un'applicazione web progressiva (**Progressive Web App - PWA**) modulare ed offline-first per la navigazione indoor in una scuola. Progettata per supportare una gestione **multi-evento** (es. *Open School* e *School Day* ordinario) tramite configurazioni JSON dinamiche, calcolo del percorso minimo mediante algoritmo di Dijkstra su grafo ed isolamento completo delle stanze inattive.
 
 ---
 
@@ -58,7 +58,7 @@ L'app adatta le sue funzionalità ed il manifest in base al parametro `config` p
   `https://tuo-dominio.github.io/?config=open-school`  
   *Installa l'app "Open School" con lo stand e i laboratori attivi per l'orientamento.*
 
-- **Mappa Istituto (Uso Interno)**:  
+- **Mappa Scuola (Uso Interno)**:  
   `https://tuo-dominio.github.io/?config=school-day`  
   *Installa l'app "School Day" per la navigazione quotidiana di studenti e personale.*
 
